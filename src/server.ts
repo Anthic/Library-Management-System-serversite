@@ -8,7 +8,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: [config.deploymentUrl, "http://localhost:5173"],
+    origin: [config.deploymentUrl, "*"],
     credentials: true,
   })
 );
