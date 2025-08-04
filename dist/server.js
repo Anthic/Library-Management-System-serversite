@@ -18,10 +18,7 @@ const cors_1 = __importDefault(require("cors"));
 const config_1 = __importDefault(require("./config"));
 const allRoute_1 = __importDefault(require("./modules/router/allRoute"));
 const app = (0, express_1.default)();
-app.use((0, cors_1.default)({
-    origin: [config_1.default.deploymentUrl, "*"],
-    credentials: true,
-}));
+app.use((0, cors_1.default)(config_1.default.cors));
 app.use(express_1.default.json());
 app.use(allRoute_1.default);
 app.get("/", (req, res) => {
